@@ -31,11 +31,25 @@ def text_to_picture(file_name,name):
     text = str(name)
     #設定字型和字號
     font_type = 'stxihei'
-    font_size = 120
-    font = pygame.font.SysFont(font_type, font_size)
-    #渲染圖片，設定背景顏色和字型樣式,前面的顏色是字型顏色
-    font_text = font.render(text, True, (0, 0, 0))
-    bg.blit(font_text, (180, 680))
+    
+    if (len(text) == 3):
+        font_size = 120
+        font = pygame.font.SysFont(font_type, font_size)
+        #渲染圖片，設定背景顏色和字型樣式,前面的顏色是字型顏色
+        font_text = font.render(text, True, (0, 0, 0))
+        bg.blit(font_text, (172, 680))
+    elif len(text) == 4:
+        font_size = 100
+        font = pygame.font.SysFont(font_type, font_size)
+        #渲染圖片，設定背景顏色和字型樣式,前面的顏色是字型顏色
+        font_text = font.render(text, True, (0, 0, 0))
+        bg.blit(font_text, (148, 680))
+    elif len(text) == 5:
+        font_size = 86
+        font = pygame.font.SysFont(font_type, font_size)
+        #渲染圖片，設定背景顏色和字型樣式,前面的顏色是字型顏色
+        font_text = font.render(text, True, (0, 0, 0))
+        bg.blit(font_text, (142, 680))
     #儲存圖片
     pygame.image.save(bg, os.path.join('.', 'images', str(file_name) + '.png'))#圖片儲存地址
 
