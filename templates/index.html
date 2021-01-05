@@ -81,67 +81,110 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            {% if error %}
-                            <p class=error><strong style="color:red" id="error">Error:{{ error }}</strong>
-                                {% endif %}
-                            <form method="post">
-                                <h6 class="heading-small text-muted mb-4">請輸入信徒您的資料</h6>
-                                <div class="pl-lg-4">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-username">姓名：</label>
-                                                <!-- <input onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')"
+                            <!-- {% if error %} -->
+                            <p class=error><strong style="color:red" id="error"></strong>
+                                <!-- {% endif %} -->
+                                <!-- <form method="post"> -->
+                            <h6 class="heading-small text-muted mb-4">請輸入信徒您的資料</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-username">姓名：</label>
+                                            <!-- <input onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')"
                                                     onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\u4E00-\u9FA5]/g,''))"> -->
-                                                <input onkeyup="value=value.replace(/[^\一-\龥]/g,'')" 　　
-                                                    onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\一-\龥]/g,''))" id="name"
-                                                    maxlength='5' type="text" name="name" class="form-control" placeholder="">
-                                                    <!-- <input id="name"maxlength='5'type="text" name="name" class="form-control" placeholder=""> -->
-                                            </div>
+                                            <input onkeyup="value=value.replace(/[^\一-\龥]/g,'')" 　　
+                                                onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\一-\龥]/g,''))"
+                                                id="name" maxlength='5' type="text" name="name" class="form-control"
+                                                placeholder="">
+                                            <!-- <input id="name"maxlength='5'type="text" name="name" class="form-control" placeholder=""> -->
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-username">姓別：</label>
+                                            <select class="form-control col-4" name="sex" id="sex">
+                                                <option value="男" selected="true">男</option>
+                                                <option value="女">女</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">出生日期</label>
                                     <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-username">姓別：</label>
-                                                <select class="form-control col-4" name="sex">
-                                                    <option value="男" selected="true">男</option>
-                                                    <option value="女">女</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        <input onkeyup="value=value.replace(/[^\d]/g,'') " 　　
+                                            onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+                                            maxlength="4" type="text" name="year" class="form-control col-3" id="year"
+                                            placeholder="西元年" value="" style="margin-left:14px">
+                                        <select class="form-control col-4" id="month" name="month"
+                                            style="margin-left:6px">
+                                            <!-- {% for i in range(12)%} -->
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <!-- {%endfor%} -->
+                                        </select>
+                                        <select class="form-control col-4" id="day" name="day" style="margin-left:6px">
+                                            <!-- {% for i in range(31)%} -->
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                            <!-- {%endfor%} -->
+                                        </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">出生日期</label>
-                                        <div class="row">
-                                            <input onkeyup="value=value.replace(/[^\d]/g,'') " 　　
-                                                onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
-                                                maxlength="4" type="text" name="year" class="form-control col-3"
-                                                placeholder="西元年" value="" style="margin-left:14px">
-                                            <select class="form-control col-4" name="month" style="margin-left:6px">
-                                                {% for i in range(12)%}
-                                                <option value="{{i+1}}">{{i+1}}</option>
-                                                {%endfor%}
-                                            </select>
-                                            <select class="form-control col-4" name="day" style="margin-left:6px">
-                                                {% for i in range(31)%}
-                                                <option value="{{i+1}}">{{i+1}}</option>
-                                                {%endfor%}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="form-group">
+                                </div>
+                                <!-- <div class="form-group">
                                         <label class="form-control-label" for="input-address">地址：</label>
                                         <input id="input-address" class="form-control" placeholder="高雄市燕巢區大學路1號" value="" type="text">
                                     </div> -->
-                                    <div class="confirm">
-                                        <center><button type="submit" class="btn bg-info" id="button"
+                                <div class="confirm">
+                                    <center><button type="submit" class="btn bg-info" id="button"
                                             style="margin:0px auto;margin-top: 12px;">繼續</button></center>
-                                    </div>
                                 </div>
+                            </div>
 
-                                <hr class="my-4" />
-                            </form>
+                            <hr class="my-4" />
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>
@@ -194,8 +237,8 @@
                 var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]");
                 var result = text.match(pattern);
                 if (!result) {
-                    // $("#content").append(text + "<br>");
-                    // $("#name").val("");
+                    set();
+                    // alert('123');
                 } else {
                     // alert("含有特殊字元")
                     $("#error").val("含有特殊字元");
@@ -203,6 +246,31 @@
                 }
             });
         });
+        // function sendValue(){
+        //     window.open("light.html");
+        //     window.close();
+        // }
+        function set() {
+            //由于是一个新的技术，你可以通过下面的代码检测你的浏览器是否支持
+            if ($('#name').val() == '') {
+                $('#error').text("Error:未輸入姓名");
+                // alert("123");
+            } else if (document.all.year.value == '') {
+                $('#error').text('Error:未輸入年份');
+            }
+            else if (window.localStorage) {
+                //存储变量的值
+                localStorage.name = document.all.name.value;
+                localStorage.sex = document.all.sex.value;
+                localStorage.year = document.all.year.value;
+                localStorage.month = document.all.month.value;
+                localStorage.day = document.all.day.value;
+                location.href = './light.html';
+                // window.open("light.html");
+            } else {
+                alert("NOT SUPPORT");
+            }
+        }
     </script>
 </body>
 

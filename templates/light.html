@@ -66,54 +66,57 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form method="post">
-                                <h6 class="heading-small text-muted mb-4">請選擇光明燈</h6>
-                                <!-- <row>
+                            <!-- <form method="post"> -->
+                            <h6 class="heading-small text-muted mb-4">請選擇光明燈</h6>
+                            <!-- <row>
                                         <button  class="btn bg-purple">安太歲</button>
                                         <button  class="btn bg-success">光明燈</button>
                                         <button  class="btn bg-success">文昌燈</button>
                                         <button  class="btn bg-success">拜斗燈</button>
                                     </row> -->
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                        <input type="radio" name="options" id="option1" value="An_Tai_Sui"
-                                            autocomplete="off" checked> 安太歲
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" value="Bright_Lights" name="options" id="option2" autocomplete="off"> 光明燈
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input value="Wenchang_Lamp"type="radio" name="options" id="option3" autocomplete="off"> 文昌燈
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input value="Worship_The_Lantern" type="radio" name="options" id="option4" autocomplete="off"> 拜斗燈
-                                    </label>
-                                </div>
-                                <!-- <div class="lightbackground" id="background">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="options" id="option1" value="An_Tai_Sui"
+                                        autocomplete="off" checked> 安太歲
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" value="Bright_Lights" name="options" id="option2"
+                                        autocomplete="off"> 光明燈
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input value="Wenchang_Lamp" type="radio" name="options" id="option3"
+                                        autocomplete="off"> 文昌燈
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input value="Worship_The_Lantern" type="radio" name="options" id="option4"
+                                        autocomplete="off"> 拜斗燈
+                                </label>
+                            </div>
+                            <!-- <div class="lightbackground" id="background">
                                     <div id="backgroundfont">
                                     </div>
                                 </div> -->
-                                <div class="myDiv">
-                                    <div class="bg"></div>
-                                    <div id="backgroundfont">
-                                        祈求流年平安、諸事順遂 <br>
+                            <div class="myDiv">
+                                <div class="bg"></div>
+                                <div id="backgroundfont">
+                                    祈求流年平安、諸事順遂 <br>
 
-                                        適用對象：<br>
-                                        肖牛、羊、狗、龍之犯太歲民眾。<br>
-                                        登記費用：每盞燈新台幣 600 元整<br>
-                                        <br><br><br>
+                                    適用對象：<br>
+                                    肖牛、羊、狗、龍之犯太歲民眾。<br>
+                                    登記費用：每盞燈新台幣 600 元整<br>
+                                    <br><br><br>
 
 
-                                        太歲星君俗稱太歲或歲君，負責掌管人間的吉凶禍福。 俗諺云：太歲當頭坐，無喜必有禍。太歲出現來，無病恐破財。<br>
-                                        因此本命生肖與值年太歲相沖，或相隔六年（叫對沖或偏沖），為了要趨吉避凶必須「安太歲」，以祈求來年平安，諸事順遂。
-                                    </div>
+                                    太歲星君俗稱太歲或歲君，負責掌管人間的吉凶禍福。 俗諺云：太歲當頭坐，無喜必有禍。太歲出現來，無病恐破財。<br>
+                                    因此本命生肖與值年太歲相沖，或相隔六年（叫對沖或偏沖），為了要趨吉避凶必須「安太歲」，以祈求來年平安，諸事順遂。
                                 </div>
-                                <div class="confirm">
-                                    <center><button type="submit" class="btn bg-success"
-                                            style="margin:0px auto;margin-top: 12px;">送出</button></center>
-                                </div>
-                                <hr class="my-4" />
-                            </form>
+                            </div>
+                            <div class="confirm">
+                                <center><button class="btn bg-success" style="margin:0px auto;margin-top: 12px;"
+                                        id="submit">送出</button></center>
+                            </div>
+                            <hr class="my-4" />
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>
@@ -174,8 +177,8 @@
             因此本命生肖與值年太歲相沖，或相隔六年（叫對沖或偏沖），為了要趨吉避凶必須「安太歲」，以祈求來年平安，諸事順遂。`);
         });
         $("#option2").click(function () {
-                // alert("Handler for .click() called.");
-                $('#backgroundfont').html(`
+            // alert("Handler for .click() called.");
+            $('#backgroundfont').html(`
                 祈求元辰光彩、補運助氣<br>
 
                 適用對象：<br>
@@ -186,10 +189,10 @@
 
                 燈是元神的象徵，點光明燈即是將姓名、生辰、住址書寫於燈上，拜請神明保佑，以點亮光明來增添元辰光采， 期許為個人補運助氣、增福益壽，避免運途不順、官災、小人等。 <br>
                 光明燈又名消災燈，適用於本命年非犯太歲者；而犯太歲者除了安太歲之外，也可以點光明燈，以祈求身體健康，前程光明。`);
-            });
+        });
         $("#option3").click(function () {
-                // alert("Handler for .click() called.");
-                $('#backgroundfont').html(`
+            // alert("Handler for .click() called.");
+            $('#backgroundfont').html(`
                 祈求金榜題名、工作升遷<br>
 
                 適用對象：<br>
@@ -200,10 +203,10 @@
 
                 文昌帝君是掌管功名之神，主宰士子的功名利祿。點文昌燈旨在於祈求文昌帝君的加持庇佑，期許個人在求學路上或求職路上能智慧大開、步步高昇。 <br>
                 文昌燈不僅適用於讀書人也適用於一般的上班族。讀書人祭拜文昌帝君，祈求能金榜題名，學業成就。上班族祭拜文昌帝君，祈求工作升遷、仕途如意。`);
-            });
+        });
         $("#option4").click(function () {
-                // alert("Handler for .click() called.");
-                $('#backgroundfont').html(`
+            // alert("Handler for .click() called.");
+            $('#backgroundfont').html(`
                 祈求趨吉避凶、投資倍利<br>
 
                 適用對象：<br>
@@ -214,7 +217,53 @@
 
                 傳統道教相信世間的一切生命，均隸屬斗宮，星辰運轉，年歲行運，皆屬星宿所主宰，「禮斗」即為天人常用的交流感應方式，為道教獨有的法會科儀，<br>
                 傳說中孔明借東風，陳靖姑祈雨都是經由「禮斗」而奏效的。 點拜斗燈係按個人生辰開斗，以祈求驅邪押煞、延命保安，同時也可保佑事業駿發、投資倍利。`);
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var name = localStorage["name"];
+                var sex = localStorage["sex"];
+                var year = localStorage["year"];
+                var month = localStorage["month"];
+                var day = localStorage["day"];
+                var light = $("[name='options']:checked").val() 
+                // alert(name);
+                if (sex == '男'){
+                    sex = 'Man'
+                }else if (sex == '女'){
+                    sex = 'Ms'
+                }
+                var birthday = year + '-' + month + '-' + day
+                postapi(name, sex, birthday, light)
             });
+        });
+        function postapi(name, sex, birthday, light) {
+            request = {
+                "name": name,
+                "user_id": '123456789012345678901234567890123',
+                "birthday": birthday,
+                "sex": sex,
+                "light_type": light
+            }
+            fetch("https://asia-east2-guanyin-mother-300200.cloudfunctions.net/bright_lights", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(request),
+            })
+                .then((response) => response.json())
+                .then((responseData) => {
+                    console.log(responseData);
+                    alert("送出成功");
+                })
+                .catch((error) => {
+                    console.log(error);
+                    alert("系統發生錯誤!!我們將盡力修復。");
+                })
+        }
     </script>
 </body>
 
