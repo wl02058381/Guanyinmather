@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify, redirect, url_for, flash, send_file, send_from_directory, flash, session
 from flask_migrate import Migrate
+from flask_cors import CORS
 import time
 import json
 import requests
@@ -65,13 +66,32 @@ def light():
     return render_template("light.html")  # 回傳登入畫面
 
 
+@app.route('/postlight', methods=["POST"])
+def postlight():
+    reqData = json.loads(bytes.decode(request.data))
+    name = reqData["name"]
+    user_id = reqData["user_id"]
+    birthday = reqData["birthday"]
+    sex = reqData["sex"]
+    light_type = reqData["light_type"]
+    data = {"name": name,
+            "user_id": '123456789012345678901234567890123',
+            "birthday": birthday,
+            "sex": sex,
+            "light_type": light_type}
+    r = requests.post(
+        'https://asia-east2-guanyin-mother-300200.cloudfunctions.net/bright_lights', json=data)
+    print(r.json())
+    data = {"Status": "OK"}
+    return json.dumps(data)
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, "static/image"), "favicon.ico", mimetype="image/favicon.ico")
     
 @app.route('/test')
 def test():
-    return render_template('index.html')
+    return render_template('light.html')
 
 if __name__ == '__main__':
     # #...中略...#

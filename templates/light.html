@@ -247,14 +247,16 @@
                 "light_type": light
             }
             fetch("https://asia-east2-guanyin-mother-300200.cloudfunctions.net/bright_lights", {
+                // fetch("http://localhost:3333/postlight", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
+                    "Access-Control-Allow-Origin": '*'
                 },
                 body: JSON.stringify(request),
             })
-                .then((response) => response.json())
+                .then((response) => console.log(response.json()))
                 .then((responseData) => {
                     console.log(responseData);
                     alert("送出成功");

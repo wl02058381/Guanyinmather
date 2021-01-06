@@ -115,61 +115,16 @@
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">出生日期</label>
                                     <div class="row">
-                                        <input onkeyup="value=value.replace(/[^\d]/g,'') " 　　
+                                        <!-- <input onkeyup="value=value.replace(/[^\d]/g,'') " 　　
                                             onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
                                             maxlength="4" type="text" name="year" class="form-control col-3" id="year"
-                                            placeholder="西元年" value="" style="margin-left:14px">
-                                        <select class="form-control col-4" id="month" name="month"
-                                            style="margin-left:6px">
-                                            <!-- {% for i in range(12)%} -->
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <!-- {%endfor%} -->
+                                            placeholder="西元年" value="" style="margin-left:14px"> -->
+                                        <select name="year"id="year" class="form-control col-3"onchange=changeyear(event)>
                                         </select>
-                                        <select class="form-control col-4" id="day" name="day" style="margin-left:6px">
-                                            <!-- {% for i in range(31)%} -->
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                            <!-- {%endfor%} -->
+                                        <select class="form-control col-4" id="month" name="month"
+                                            style="margin-left:6px"onchange=changemonth(event)>
+                                        </select>
+                                        <select class="form-control col-4" id="day" name="day" style="margin-left:6px"onchange=changeday(event)>
                                         </select>
                                     </div>
                                 </div>
@@ -232,6 +187,9 @@
     <script src="../static/assets/js/argon.js?v=1.2.0"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            create_year();
+            create_month();
+            create_day();
             $("#button").click(function () {
                 var text = $("#name").val();
                 var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]");
@@ -246,10 +204,113 @@
                 }
             });
         });
-        // function sendValue(){
-        //     window.open("light.html");
-        //     window.close();
-        // }
+        function create_year() {
+                var option_year = document.getElementById("year");
+                for (let year_index = 0; year_index < 111; year_index++) {
+                    var option = document.createElement("option");
+                    option.text = year_index;
+                    option.value = year_index;
+                    option_year.appendChild(option);
+                }
+            }
+
+            function create_month() {
+                var option_month = document.getElementById("month");
+                for (let month_index = 1; month_index < 13; month_index++) {
+                    var option = document.createElement("option");
+                    option.text = month_index;
+                    option.value = month_index;
+                    option_month.appendChild(option);
+                }
+            }
+
+            var select_day;
+            var select_year;
+            function create_day() {
+                var select_month = document.getElementById("month").value;
+                var option_day = document.getElementById("day");
+
+                if (select_month == 2 || select_month == 4 || select_month == 6 || select_month == 9 || select_month == 11) {
+                    if (select_month == 2) {
+                        if (select_year == "0") {
+                            for (let day_index = 1; day_index < 30; day_index++) {
+                                if (day_index - 1 == select_day) {
+                                    option.setAttribute("selected", "selected")
+                                }
+                                var option = document.createElement("option");
+                                option.text = day_index
+                                option.value = day_index
+                                option_day.appendChild(option);
+                            }
+
+                        } else {
+                            for (let day_index = 1; day_index < 29; day_index++) {
+                                if (day_index - 1 == select_day) {
+                                    option.setAttribute("selected", "selected")
+                                }
+                                var option = document.createElement("option");
+                                option.text = day_index
+                                option.value = day_index
+                                option_day.appendChild(option);
+                            }
+                        }
+                    } else {
+                        for (let day_index = 1; day_index < 31; day_index++) {
+                            if (day_index - 1 == select_day) {
+                                option.setAttribute("selected", "selected")
+                            }
+                            var option = document.createElement("option");
+                            option.text = day_index
+                            option.value = day_index
+                            option_day.appendChild(option);
+                        }
+                    }
+                } else if (select_month == 1 || select_month == 3 || select_month == 5 || select_month == 7 || select_month == 8 || select_month == 10 || select_month == 12) {
+                    for (let day_index = 1; day_index < 32; day_index++) {
+                        if (day_index - 1 == select_day) {
+                            option.setAttribute("selected", "selected")
+                        }
+                        var option = document.createElement("option");
+                        option.text = day_index
+                        option.value = day_index
+                        option_day.appendChild(option);
+                    }
+                }
+            }
+
+            function changemonth() {
+                const dir = async function () {
+                    await removeoption_day();
+                    create_day();
+                }
+                dir()
+            }
+
+            function removeoption_day() {
+                var option_day = document.getElementById("day");
+                return option_day.innerHTML = "";
+            }
+
+            function changeday() {
+                select_day = document.getElementById("day").value;
+            }
+
+            function changeyear() {
+                select_year = parseInt(document.getElementById("year").value) + 1911;
+                // 是不是閏年判斷
+                if ((select_year % 400 == 0) || (select_year % 4 == 0 && select_year % 100 != 0)) {
+                    select_year = "0";
+                } else {
+                    select_year = "1";
+                }
+
+                const dir = async function () {
+                    await removeoption_day();
+                    create_day();
+                }
+
+                dir()
+            }
         function set() {
             //由于是一个新的技术，你可以通过下面的代码检测你的浏览器是否支持
             if ($('#name').val() == '') {
